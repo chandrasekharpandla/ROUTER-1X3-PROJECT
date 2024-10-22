@@ -1,0 +1,534 @@
+TimeQuest Timing Analyzer report for router_fifo
+Mon Feb 05 16:53:46 2024
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clock'
+ 12. Hold: 'clock'
+ 13. Setup Transfers
+ 14. Hold Transfers
+ 15. Report TCCS
+ 16. Report RSKM
+ 17. Unconstrained Paths Summary
+ 18. Clock Status Summary
+ 19. Unconstrained Input Ports
+ 20. Unconstrained Output Ports
+ 21. Unconstrained Input Ports
+ 22. Unconstrained Output Ports
+ 23. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                           ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest                                           ;
+; Revision Name         ; router_fifo                                         ;
+; Device Family         ; MAX V                                               ;
+; Device Name           ; 5M570ZM100C4                                        ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; clock      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++-------------------------------------------------+
+; Fmax Summary                                    ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 62.57 MHz ; 62.57 MHz       ; clock      ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Setup Summary                   ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; clock ; -14.983 ; -1832.969     ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 2.072 ; 0.000         ;
++-------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clock ; -2.289 ; -2.289        ;
++-------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Setup: 'clock'                                                                                               ;
++---------+------------+-----------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node  ; To Node         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+------------+-----------------+--------------+-------------+--------------+------------+------------+
+; -14.983 ; rd_ptr[2]  ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 15.723     ;
+; -14.940 ; rd_ptr[2]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 15.680     ;
+; -14.907 ; rd_ptr[1]  ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 15.647     ;
+; -14.864 ; rd_ptr[1]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 15.604     ;
+; -14.831 ; mem[2][2]  ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 15.571     ;
+; -14.788 ; mem[2][2]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 15.528     ;
+; -14.661 ; rd_ptr[3]  ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 15.401     ;
+; -14.618 ; rd_ptr[3]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 15.358     ;
+; -14.592 ; rd_ptr[0]  ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 15.332     ;
+; -14.549 ; rd_ptr[0]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 15.289     ;
+; -14.318 ; rd_ptr[2]  ; fifo_counter[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 15.058     ;
+; -14.242 ; rd_ptr[1]  ; fifo_counter[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.982     ;
+; -14.166 ; mem[2][2]  ; fifo_counter[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.906     ;
+; -14.129 ; mem[4][3]  ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.869     ;
+; -14.109 ; mem[2][2]  ; fifo_counter[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.849     ;
+; -14.097 ; rd_ptr[1]  ; fifo_counter[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.837     ;
+; -14.086 ; mem[4][3]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.826     ;
+; -14.056 ; mem[4][5]  ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.796     ;
+; -14.048 ; rd_ptr[2]  ; fifo_counter[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.788     ;
+; -14.021 ; mem[2][2]  ; fifo_counter[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.761     ;
+; -14.013 ; mem[4][5]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.753     ;
+; -14.003 ; rd_ptr[2]  ; fifo_counter[5] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.743     ;
+; -13.996 ; rd_ptr[3]  ; fifo_counter[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.736     ;
+; -13.969 ; mem[15][7] ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.709     ;
+; -13.960 ; rd_ptr[2]  ; fifo_counter[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.700     ;
+; -13.927 ; rd_ptr[0]  ; fifo_counter[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.667     ;
+; -13.927 ; rd_ptr[1]  ; fifo_counter[5] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.667     ;
+; -13.923 ; rd_ptr[3]  ; fifo_counter[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.663     ;
+; -13.894 ; mem[13][6] ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.634     ;
+; -13.851 ; mem[2][2]  ; fifo_counter[5] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.591     ;
+; -13.835 ; rd_ptr[3]  ; fifo_counter[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.575     ;
+; -13.782 ; rd_ptr[0]  ; fifo_counter[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.522     ;
+; -13.733 ; mem[14][6] ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.473     ;
+; -13.681 ; rd_ptr[3]  ; fifo_counter[5] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.421     ;
+; -13.671 ; mem[13][2] ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.411     ;
+; -13.632 ; mem[3][6]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.372     ;
+; -13.628 ; mem[13][2] ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.368     ;
+; -13.623 ; mem[13][4] ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.363     ;
+; -13.612 ; rd_ptr[0]  ; fifo_counter[5] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.352     ;
+; -13.580 ; mem[13][4] ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.320     ;
+; -13.569 ; mem[1][4]  ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.309     ;
+; -13.563 ; mem[1][6]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.303     ;
+; -13.526 ; mem[0][6]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.266     ;
+; -13.526 ; mem[1][4]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.266     ;
+; -13.493 ; rd_ptr[1]  ; fifo_counter[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.233     ;
+; -13.464 ; mem[4][3]  ; fifo_counter[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.204     ;
+; -13.456 ; mem[0][5]  ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.196     ;
+; -13.442 ; mem[12][3] ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.182     ;
+; -13.415 ; mem[2][4]  ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.155     ;
+; -13.413 ; mem[0][5]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.153     ;
+; -13.399 ; mem[12][3] ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.139     ;
+; -13.372 ; mem[2][4]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.112     ;
+; -13.361 ; mem[15][4] ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.101     ;
+; -13.319 ; mem[4][3]  ; fifo_counter[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.059     ;
+; -13.318 ; mem[15][4] ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.058     ;
+; -13.283 ; mem[12][5] ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.023     ;
+; -13.272 ; mem[0][4]  ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 14.012     ;
+; -13.257 ; mem[4][7]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.997     ;
+; -13.240 ; mem[12][5] ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.980     ;
+; -13.229 ; mem[0][4]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.969     ;
+; -13.210 ; rd_ptr[2]  ; fifo_counter[0] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.950     ;
+; -13.200 ; mem[1][8]  ; fifo_counter[0] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.940     ;
+; -13.200 ; mem[1][8]  ; fifo_counter[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.940     ;
+; -13.200 ; mem[1][8]  ; fifo_counter[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.940     ;
+; -13.200 ; mem[1][8]  ; fifo_counter[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.940     ;
+; -13.200 ; mem[1][8]  ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.940     ;
+; -13.200 ; mem[1][8]  ; fifo_counter[5] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.940     ;
+; -13.200 ; mem[1][8]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.940     ;
+; -13.198 ; mem[15][6] ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.938     ;
+; -13.181 ; mem[3][5]  ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.921     ;
+; -13.178 ; rd_ptr[0]  ; fifo_counter[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.918     ;
+; -13.160 ; mem[3][7]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.900     ;
+; -13.154 ; mem[12][6] ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.894     ;
+; -13.149 ; mem[4][3]  ; fifo_counter[5] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.889     ;
+; -13.138 ; mem[3][5]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.878     ;
+; -13.137 ; mem[15][3] ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.877     ;
+; -13.094 ; mem[15][3] ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.834     ;
+; -13.076 ; mem[4][5]  ; fifo_counter[5] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.816     ;
+; -13.064 ; mem[3][4]  ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.804     ;
+; -13.064 ; mem[15][5] ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.804     ;
+; -13.043 ; mem[3][2]  ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.783     ;
+; -13.039 ; mem[8][5]  ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.779     ;
+; -13.021 ; mem[3][4]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.761     ;
+; -13.021 ; mem[15][5] ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.761     ;
+; -13.006 ; mem[13][2] ; fifo_counter[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.746     ;
+; -13.000 ; mem[3][2]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.740     ;
+; -12.996 ; mem[8][5]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.736     ;
+; -12.995 ; mem[13][6] ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.735     ;
+; -12.958 ; mem[13][4] ; fifo_counter[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.698     ;
+; -12.949 ; mem[13][2] ; fifo_counter[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.689     ;
+; -12.944 ; mem[12][4] ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.684     ;
+; -12.933 ; mem[12][7] ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.673     ;
+; -12.904 ; mem[1][4]  ; fifo_counter[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.644     ;
+; -12.901 ; mem[12][4] ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.641     ;
+; -12.861 ; mem[13][2] ; fifo_counter[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.601     ;
+; -12.834 ; mem[14][6] ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.574     ;
+; -12.832 ; mem[13][6] ; fifo_counter[5] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.572     ;
+; -12.830 ; mem[3][3]  ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.570     ;
+; -12.829 ; mem[14][4] ; fifo_counter[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.569     ;
+; -12.787 ; mem[3][3]  ; fifo_counter[6] ; clock        ; clock       ; 1.000        ; 0.000      ; 13.527     ;
++---------+------------+-----------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clock'                                                                                                    ;
++-------+-----------------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node       ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------+------------------+--------------+-------------+--------------+------------+------------+
+; 2.072 ; fifo_ptr[4]     ; fifo_ptr[4]      ; clock        ; clock       ; 0.000        ; 0.000      ; 2.146      ;
+; 2.301 ; wr_ptr[1]       ; wr_ptr[1]        ; clock        ; clock       ; 0.000        ; 0.000      ; 2.375      ;
+; 2.308 ; wr_ptr[3]       ; wr_ptr[3]        ; clock        ; clock       ; 0.000        ; 0.000      ; 2.382      ;
+; 2.824 ; fifo_counter[6] ; fifo_counter[6]  ; clock        ; clock       ; 0.000        ; 0.000      ; 2.898      ;
+; 2.840 ; rd_ptr[2]       ; rd_ptr[3]        ; clock        ; clock       ; 0.000        ; 0.000      ; 2.914      ;
+; 2.842 ; fifo_counter[0] ; fifo_counter[0]  ; clock        ; clock       ; 0.000        ; 0.000      ; 2.916      ;
+; 2.845 ; fifo_counter[1] ; fifo_counter[1]  ; clock        ; clock       ; 0.000        ; 0.000      ; 2.919      ;
+; 2.885 ; wr_ptr[0]       ; wr_ptr[0]        ; clock        ; clock       ; 0.000        ; 0.000      ; 2.959      ;
+; 2.890 ; wr_ptr[0]       ; wr_ptr[1]        ; clock        ; clock       ; 0.000        ; 0.000      ; 2.964      ;
+; 2.957 ; fifo_counter[4] ; fifo_counter[4]  ; clock        ; clock       ; 0.000        ; 0.000      ; 3.031      ;
+; 2.958 ; fifo_counter[5] ; fifo_counter[5]  ; clock        ; clock       ; 0.000        ; 0.000      ; 3.032      ;
+; 2.959 ; fifo_ptr[3]     ; fifo_ptr[3]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.033      ;
+; 2.964 ; fifo_ptr[1]     ; fifo_ptr[1]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.038      ;
+; 2.967 ; fifo_counter[2] ; fifo_counter[2]  ; clock        ; clock       ; 0.000        ; 0.000      ; 3.041      ;
+; 2.967 ; fifo_counter[3] ; fifo_counter[3]  ; clock        ; clock       ; 0.000        ; 0.000      ; 3.041      ;
+; 2.972 ; fifo_ptr[0]     ; fifo_ptr[0]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.046      ;
+; 2.994 ; rd_ptr[1]       ; rd_ptr[1]        ; clock        ; clock       ; 0.000        ; 0.000      ; 3.068      ;
+; 2.999 ; rd_ptr[1]       ; data_out[0]~reg0 ; clock        ; clock       ; 0.000        ; 0.000      ; 3.073      ;
+; 3.015 ; wr_ptr[2]       ; wr_ptr[2]        ; clock        ; clock       ; 0.000        ; 0.000      ; 3.089      ;
+; 3.017 ; wr_ptr[2]       ; wr_ptr[3]        ; clock        ; clock       ; 0.000        ; 0.000      ; 3.091      ;
+; 3.263 ; rd_ptr[1]       ; rd_ptr[3]        ; clock        ; clock       ; 0.000        ; 0.000      ; 3.337      ;
+; 3.363 ; fifo_ptr[2]     ; fifo_ptr[2]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.437      ;
+; 3.563 ; fifo_counter[0] ; fifo_counter[1]  ; clock        ; clock       ; 0.000        ; 0.000      ; 3.637      ;
+; 3.566 ; fifo_counter[1] ; fifo_counter[2]  ; clock        ; clock       ; 0.000        ; 0.000      ; 3.640      ;
+; 3.676 ; fifo_counter[0] ; fifo_counter[2]  ; clock        ; clock       ; 0.000        ; 0.000      ; 3.750      ;
+; 3.679 ; fifo_counter[1] ; fifo_counter[3]  ; clock        ; clock       ; 0.000        ; 0.000      ; 3.753      ;
+; 3.789 ; fifo_counter[0] ; fifo_counter[3]  ; clock        ; clock       ; 0.000        ; 0.000      ; 3.863      ;
+; 3.822 ; fifo_counter[4] ; fifo_counter[5]  ; clock        ; clock       ; 0.000        ; 0.000      ; 3.896      ;
+; 3.823 ; fifo_counter[5] ; fifo_counter[6]  ; clock        ; clock       ; 0.000        ; 0.000      ; 3.897      ;
+; 3.824 ; fifo_ptr[3]     ; fifo_ptr[4]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.898      ;
+; 3.829 ; fifo_ptr[1]     ; fifo_ptr[2]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.903      ;
+; 3.832 ; fifo_counter[2] ; fifo_counter[3]  ; clock        ; clock       ; 0.000        ; 0.000      ; 3.906      ;
+; 3.837 ; fifo_ptr[0]     ; fifo_ptr[1]      ; clock        ; clock       ; 0.000        ; 0.000      ; 3.911      ;
+; 3.932 ; mem[6][0]       ; data_out[0]~reg0 ; clock        ; clock       ; 0.000        ; 0.000      ; 4.006      ;
+; 3.935 ; fifo_counter[4] ; fifo_counter[6]  ; clock        ; clock       ; 0.000        ; 0.000      ; 4.009      ;
+; 3.942 ; fifo_ptr[1]     ; fifo_ptr[3]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.016      ;
+; 3.950 ; fifo_ptr[0]     ; fifo_ptr[2]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.024      ;
+; 3.959 ; rd_ptr[2]       ; data_out[1]~reg0 ; clock        ; clock       ; 0.000        ; 0.000      ; 4.033      ;
+; 4.035 ; mem[9][7]       ; data_out[7]~reg0 ; clock        ; clock       ; 0.000        ; 0.000      ; 4.109      ;
+; 4.055 ; fifo_ptr[1]     ; fifo_ptr[4]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.129      ;
+; 4.063 ; fifo_ptr[0]     ; fifo_ptr[3]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.137      ;
+; 4.067 ; fifo_ptr[2]     ; data_out[0]~en   ; clock        ; clock       ; 0.000        ; 0.000      ; 4.141      ;
+; 4.069 ; mem[14][1]      ; data_out[1]~reg0 ; clock        ; clock       ; 0.000        ; 0.000      ; 4.143      ;
+; 4.078 ; rd_ptr[1]       ; rd_ptr[2]        ; clock        ; clock       ; 0.000        ; 0.000      ; 4.152      ;
+; 4.088 ; temp_lfd        ; mem[2][8]        ; clock        ; clock       ; 0.000        ; 0.000      ; 4.162      ;
+; 4.170 ; fifo_ptr[4]     ; fifo_ptr[2]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.244      ;
+; 4.170 ; fifo_ptr[4]     ; fifo_ptr[3]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.244      ;
+; 4.171 ; fifo_ptr[4]     ; fifo_ptr[1]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.245      ;
+; 4.176 ; fifo_ptr[0]     ; fifo_ptr[4]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.250      ;
+; 4.182 ; fifo_counter[1] ; fifo_counter[4]  ; clock        ; clock       ; 0.000        ; 0.000      ; 4.256      ;
+; 4.182 ; fifo_counter[1] ; fifo_counter[5]  ; clock        ; clock       ; 0.000        ; 0.000      ; 4.256      ;
+; 4.182 ; fifo_counter[1] ; fifo_counter[6]  ; clock        ; clock       ; 0.000        ; 0.000      ; 4.256      ;
+; 4.211 ; fifo_counter[3] ; fifo_counter[4]  ; clock        ; clock       ; 0.000        ; 0.000      ; 4.285      ;
+; 4.211 ; fifo_counter[3] ; fifo_counter[5]  ; clock        ; clock       ; 0.000        ; 0.000      ; 4.285      ;
+; 4.211 ; fifo_counter[3] ; fifo_counter[6]  ; clock        ; clock       ; 0.000        ; 0.000      ; 4.285      ;
+; 4.228 ; fifo_ptr[2]     ; fifo_ptr[3]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.302      ;
+; 4.292 ; fifo_counter[0] ; fifo_counter[4]  ; clock        ; clock       ; 0.000        ; 0.000      ; 4.366      ;
+; 4.292 ; fifo_counter[0] ; fifo_counter[5]  ; clock        ; clock       ; 0.000        ; 0.000      ; 4.366      ;
+; 4.292 ; fifo_counter[0] ; fifo_counter[6]  ; clock        ; clock       ; 0.000        ; 0.000      ; 4.366      ;
+; 4.326 ; mem[9][3]       ; data_out[3]~reg0 ; clock        ; clock       ; 0.000        ; 0.000      ; 4.400      ;
+; 4.335 ; fifo_counter[2] ; fifo_counter[4]  ; clock        ; clock       ; 0.000        ; 0.000      ; 4.409      ;
+; 4.335 ; fifo_counter[2] ; fifo_counter[5]  ; clock        ; clock       ; 0.000        ; 0.000      ; 4.409      ;
+; 4.335 ; fifo_counter[2] ; fifo_counter[6]  ; clock        ; clock       ; 0.000        ; 0.000      ; 4.409      ;
+; 4.341 ; fifo_ptr[2]     ; fifo_ptr[4]      ; clock        ; clock       ; 0.000        ; 0.000      ; 4.415      ;
+; 4.451 ; rd_ptr[0]       ; rd_ptr[0]        ; clock        ; clock       ; 0.000        ; 0.000      ; 4.525      ;
+; 4.464 ; mem[8][0]       ; data_out[0]~reg0 ; clock        ; clock       ; 0.000        ; 0.000      ; 4.538      ;
+; 4.470 ; rd_ptr[0]       ; data_out[0]~reg0 ; clock        ; clock       ; 0.000        ; 0.000      ; 4.544      ;
+; 4.481 ; fifo_ptr[4]     ; data_out[0]~en   ; clock        ; clock       ; 0.000        ; 0.000      ; 4.555      ;
+; 4.484 ; mem[10][0]      ; data_out[0]~reg0 ; clock        ; clock       ; 0.000        ; 0.000      ; 4.558      ;
+; 4.586 ; mem[10][1]      ; data_out[1]~reg0 ; clock        ; clock       ; 0.000        ; 0.000      ; 4.660      ;
+; 4.587 ; mem[10][7]      ; data_out[7]~reg0 ; clock        ; clock       ; 0.000        ; 0.000      ; 4.661      ;
+; 4.613 ; fifo_ptr[3]     ; data_out[0]~en   ; clock        ; clock       ; 0.000        ; 0.000      ; 4.687      ;
+; 4.634 ; fifo_ptr[1]     ; data_out[0]~en   ; clock        ; clock       ; 0.000        ; 0.000      ; 4.708      ;
+; 4.657 ; fifo_ptr[0]     ; data_out[0]~en   ; clock        ; clock       ; 0.000        ; 0.000      ; 4.731      ;
+; 4.878 ; mem[10][3]      ; data_out[3]~reg0 ; clock        ; clock       ; 0.000        ; 0.000      ; 4.952      ;
+; 4.929 ; wr_ptr[3]       ; mem[14][2]       ; clock        ; clock       ; 0.000        ; 0.000      ; 5.003      ;
+; 4.929 ; wr_ptr[3]       ; mem[14][4]       ; clock        ; clock       ; 0.000        ; 0.000      ; 5.003      ;
+; 4.987 ; mem[1][1]       ; data_out[1]~reg0 ; clock        ; clock       ; 0.000        ; 0.000      ; 5.061      ;
+; 5.126 ; rd_ptr[0]       ; rd_ptr[3]        ; clock        ; clock       ; 0.000        ; 0.000      ; 5.200      ;
+; 5.163 ; mem[9][0]       ; data_out[0]~reg0 ; clock        ; clock       ; 0.000        ; 0.000      ; 5.237      ;
+; 5.191 ; rd_ptr[2]       ; rd_ptr[2]        ; clock        ; clock       ; 0.000        ; 0.000      ; 5.265      ;
+; 5.259 ; mem[13][1]      ; data_out[1]~reg0 ; clock        ; clock       ; 0.000        ; 0.000      ; 5.333      ;
+; 5.292 ; fifo_ptr[2]     ; data_out[4]~en   ; clock        ; clock       ; 0.000        ; 0.000      ; 5.366      ;
+; 5.293 ; fifo_ptr[2]     ; data_out[7]~en   ; clock        ; clock       ; 0.000        ; 0.000      ; 5.367      ;
+; 5.294 ; fifo_ptr[2]     ; data_out[1]~en   ; clock        ; clock       ; 0.000        ; 0.000      ; 5.368      ;
+; 5.361 ; rd_ptr[3]       ; data_out[1]~reg0 ; clock        ; clock       ; 0.000        ; 0.000      ; 5.435      ;
+; 5.362 ; rd_ptr[3]       ; rd_ptr[3]        ; clock        ; clock       ; 0.000        ; 0.000      ; 5.436      ;
+; 5.363 ; fifo_ptr[4]     ; fifo_ptr[0]      ; clock        ; clock       ; 0.000        ; 0.000      ; 5.437      ;
+; 5.423 ; mem[6][8]       ; fifo_counter[0]  ; clock        ; clock       ; 0.000        ; 0.000      ; 5.497      ;
+; 5.423 ; mem[6][8]       ; fifo_counter[1]  ; clock        ; clock       ; 0.000        ; 0.000      ; 5.497      ;
+; 5.423 ; mem[6][8]       ; fifo_counter[2]  ; clock        ; clock       ; 0.000        ; 0.000      ; 5.497      ;
+; 5.423 ; mem[6][8]       ; fifo_counter[3]  ; clock        ; clock       ; 0.000        ; 0.000      ; 5.497      ;
+; 5.423 ; mem[6][8]       ; fifo_counter[4]  ; clock        ; clock       ; 0.000        ; 0.000      ; 5.497      ;
+; 5.423 ; mem[6][8]       ; fifo_counter[5]  ; clock        ; clock       ; 0.000        ; 0.000      ; 5.497      ;
+; 5.423 ; mem[6][8]       ; fifo_counter[6]  ; clock        ; clock       ; 0.000        ; 0.000      ; 5.497      ;
+; 5.529 ; mem[2][7]       ; data_out[7]~reg0 ; clock        ; clock       ; 0.000        ; 0.000      ; 5.603      ;
+; 5.706 ; fifo_ptr[4]     ; data_out[4]~en   ; clock        ; clock       ; 0.000        ; 0.000      ; 5.780      ;
+; 5.707 ; fifo_ptr[4]     ; data_out[7]~en   ; clock        ; clock       ; 0.000        ; 0.000      ; 5.781      ;
+; 5.708 ; fifo_ptr[4]     ; data_out[1]~en   ; clock        ; clock       ; 0.000        ; 0.000      ; 5.782      ;
+; 5.772 ; mem[6][7]       ; data_out[7]~reg0 ; clock        ; clock       ; 0.000        ; 0.000      ; 5.846      ;
++-------+-----------------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 3290     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 3290     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 13    ; 13   ;
+; Unconstrained Input Port Paths  ; 676   ; 676  ;
+; Unconstrained Output Ports      ; 10    ; 10   ;
+; Unconstrained Output Port Paths ; 22    ; 22   ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; clock  ; clock ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; data_in[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[5] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[6] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[7] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lfd_state  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; read_enb   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; resetn     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; soft_reset ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; write_enb  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; data_out[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; empty       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; full        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; data_in[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[5] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[6] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[7] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lfd_state  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; read_enb   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; resetn     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; soft_reset ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; write_enb  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; data_out[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; empty       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; full        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime TimeQuest Timing Analyzer
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Mon Feb 05 16:53:44 2024
+Info: Command: quartus_sta router_fifo -c router_fifo
+Info: qsta_default_script.tcl version: #3
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'router_fifo.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clock clock
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -14.983
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -14.983           -1832.969 clock 
+Info (332146): Worst-case hold slack is 2.072
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     2.072               0.000 clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4668 megabytes
+    Info: Processing ended: Mon Feb 05 16:53:46 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

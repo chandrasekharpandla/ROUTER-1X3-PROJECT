@@ -1,0 +1,11 @@
+Fitter Status : Successful - Mon Feb 05 16:53:38 2024
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : router_fifo
+Top-level Entity Name : router_fifo
+Family : MAX V
+Device : 5M570ZM100C4
+Timing Models : Final
+Total logic elements : 241 / 570 ( 42 % )
+Total pins : 24 / 74 ( 32 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/17.1
+vrouter_reg
+Z0 !s110 1707380257
+!i10b 1
+!s100 V7enZc2:Z?0_lSa>AHQ;^1
+InEWNJ0AnT6KH@JMng3R1^2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dD:/project/REGISTER
+w1707027850
+8D:/project/REGISTER/router_reg.v
+FD:/project/REGISTER/router_reg.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1707380257.000000
+!s107 D:/project/REGISTER/router_reg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/project/REGISTER/router_reg.v|
+!i113 1
+Z4 o-work work
+Z5 tCvgOpt 0
+vrouter_reg_tb
+R0
+!i10b 1
+!s100 >]Q_bLl]zi5D=J2h]>B:^1
+I>0S3e;;:A00m9bkfP<`Kk3
+R1
+R2
+w1707279910
+8D:/project/REGISTER/router_reg_tb.v
+FD:/project/REGISTER/router_reg_tb.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1707380256.000000
+!s107 D:/project/REGISTER/router_reg_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/project/REGISTER/router_reg_tb.v|
+!i113 1
+R4
+R5
